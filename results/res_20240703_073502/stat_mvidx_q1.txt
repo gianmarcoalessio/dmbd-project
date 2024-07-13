@@ -1,0 +1,2 @@
+  idx_ptype      | 391 MB
+ idx_exp_nation | 381 MB

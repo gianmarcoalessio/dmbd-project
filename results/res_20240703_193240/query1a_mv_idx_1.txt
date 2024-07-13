@@ -1,0 +1,7 @@
+psql:sql/mv1/query1a.sql:28: ERROR:  relation "mv_q1" does not exist
+LINE 12:     mv_q1
+             ^
+
+real	0m0.055s
+user	0m0.044s
+sys	0m0.004s

@@ -1,0 +1,3 @@
+DROP INDEX idx_mv_query3_orderdate;
+DROP INDEX idx_mv_query3_customer_name;
+DROP INDEX idx_mv_query3_revenue_loss;

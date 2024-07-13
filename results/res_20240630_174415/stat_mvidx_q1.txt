@@ -1,0 +1,21 @@
+lineitem
+*** Statistics for Table: lineitem ***
+All sizes:  lineitem_pkey | 1285 MB
+orders
+*** Statistics for Table: orders ***
+All sizes:  orders_pkey | 321 MB
+part
+*** Statistics for Table: part ***
+All sizes:  part_pkey | 43 MB
+supplier
+*** Statistics for Table: supplier ***
+All sizes:  supplier_pkey | 2208 kB
+nation
+*** Statistics for Table: nation ***
+All sizes:  nation_pkey | 16 kB
+region
+*** Statistics for Table: region ***
+All sizes:  region_pkey | 16 kB
+customer
+*** Statistics for Table: customer ***
+All sizes:  customer_pkey | 32 MB

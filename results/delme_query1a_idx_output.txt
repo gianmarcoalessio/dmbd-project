@@ -1,0 +1,149 @@
+                                                                                                                                                 QUERY PLAN                                                                                                                                                 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ GroupAggregate  (cost=682139.60..777987.43 rows=815374 width=493) (actual time=28857.470..29597.603 rows=20598 loops=1)
+   Group Key: p.p_type, ireg.r_name, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+   Group Key: p.p_type, ireg.r_name, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Group Key: p.p_type, ireg.r_name, ereg.r_name
+   Group Key: p.p_type, ireg.r_name
+   Group Key: p.p_type
+   Group Key: ()
+   Sort Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, p.p_type, ireg.r_name
+     Group Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, p.p_type, ireg.r_name
+     Group Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, p.p_type
+     Group Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name
+     Group Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name
+   Sort Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, inat.n_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, inat.n_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, p.p_type
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ireg.r_name, inat.n_name, p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ireg.r_name, inat.n_name, p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ireg.r_name, inat.n_name, p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ireg.r_name, inat.n_name, p.p_type, ereg.r_name
+     Group Key: ireg.r_name, inat.n_name, p.p_type
+     Group Key: ireg.r_name, inat.n_name
+     Group Key: ireg.r_name
+   Sort Key: p.p_type, ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: p.p_type, ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: p.p_type, ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: p.p_type, ereg.r_name, enat.n_name
+     Group Key: p.p_type, ereg.r_name
+   Sort Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, enat.n_name, ireg.r_name
+     Group Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, enat.n_name, ireg.r_name
+     Group Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name
+     Group Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: p.p_type, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ereg.r_name, enat.n_name, ireg.r_name, p.p_type, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, enat.n_name, ireg.r_name, p.p_type, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, enat.n_name, ireg.r_name, p.p_type, inat.n_name
+     Group Key: ereg.r_name, enat.n_name, ireg.r_name, p.p_type
+     Group Key: ereg.r_name, enat.n_name, ireg.r_name
+     Group Key: ereg.r_name, enat.n_name
+   Sort Key: ereg.r_name, ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), inat.n_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name
+     Group Key: ereg.r_name, ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), inat.n_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name
+     Group Key: ereg.r_name, ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), inat.n_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), inat.n_name
+     Group Key: ereg.r_name, ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, ireg.r_name
+   Sort Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, ereg.r_name, (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, inat.n_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, ereg.r_name, (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), enat.n_name, inat.n_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, ereg.r_name, (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, ereg.r_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, enat.n_name, p.p_type
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, enat.n_name, p.p_type
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, enat.n_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name
+     Group Key: (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, enat.n_name, inat.n_name
+     Group Key: p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, enat.n_name, inat.n_name
+     Group Key: p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: p.p_type, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ereg.r_name, ireg.r_name, inat.n_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, ireg.r_name, inat.n_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, ireg.r_name, inat.n_name, enat.n_name
+     Group Key: ereg.r_name, ireg.r_name, inat.n_name
+   Sort Key: ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name, (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), ireg.r_name
+     Group Key: ereg.r_name, enat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), p.p_type
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+     Group Key: ireg.r_name, inat.n_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone))
+   Sort Key: ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, inat.n_name
+     Group Key: ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone)), ereg.r_name, inat.n_name
+     Group Key: ireg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+   ->  Gather Merge  (cost=682139.60..683921.66 rows=15301 width=473) (actual time=28853.876..28866.199 rows=15224 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         ->  Sort  (cost=681139.58..681155.52 rows=6375 width=473) (actual time=28739.039..28740.086 rows=5075 loops=3)
+               Sort Key: ireg.r_name, ereg.r_name, (date_part('year'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('quarter'::text, (o.o_orderdate)::timestamp without time zone)), (date_part('month'::text, (o.o_orderdate)::timestamp without time zone))
+               Sort Method: quicksort  Memory: 1161kB
+               Worker 0:  Sort Method: quicksort  Memory: 1289kB
+               Worker 1:  Sort Method: quicksort  Memory: 1217kB
+               ->  Hash Join  (cost=2611.05..680736.74 rows=6375 width=473) (actual time=3489.322..28691.179 rows=5075 loops=3)
+                     Hash Cond: (inat.n_regionkey = ireg.r_regionkey)
+                     ->  Hash Join  (cost=2609.94..680620.43 rows=6375 width=353) (actual time=147.646..25330.892 rows=5075 loops=3)
+                           Hash Cond: (c.c_nationkey = inat.n_nationkey)
+                           Join Filter: (inat.n_name <> enat.n_name)
+                           Rows Removed by Join Filter: 211
+                           ->  Nested Loop  (cost=2608.38..680597.81 rows=6641 width=249) (actual time=147.467..25318.877 rows=5286 loops=3)
+                                 ->  Nested Loop  (cost=2607.95..643480.13 rows=6641 width=249) (actual time=147.223..24170.500 rows=5286 loops=3)
+                                       ->  Hash Join  (cost=2607.51..605837.95 rows=6641 width=245) (actual time=146.693..22340.148 rows=5286 loops=3)
+                                             Hash Cond: (l.l_suppkey = s.s_suppkey)
+                                             ->  Nested Loop  (cost=151.83..602693.23 rows=166036 width=41) (actual time=8.371..22154.884 rows=132622 loops=3)
+                                                   ->  Parallel Bitmap Heap Scan on part p  (cost=151.39..27832.06 rows=5536 width=25) (actual time=6.146..120.123 rows=4420 loops=3)
+                                                         Recheck Cond: ((p_type)::text = 'ECONOMY POLISHED TIN'::text)
+                                                         Heap Blocks: exact=3280
+                                                         ->  Bitmap Index Scan on idx_part_type  (cost=0.00..148.07 rows=13286 width=0) (actual time=7.832..7.838 rows=13259 loops=1)
+                                                               Index Cond: ((p_type)::text = 'ECONOMY POLISHED TIN'::text)
+                                                   ->  Index Scan using idx_lineitem_partkey on lineitem l  (cost=0.44..103.55 rows=29 width=24) (actual time=0.317..4.970 rows=30 loops=13259)
+                                                         Index Cond: (l_partkey = p.p_partkey)
+                                             ->  Hash  (cost=2405.68..2405.68 rows=4000 width=212) (actual time=111.716..111.722 rows=3961 loops=3)
+                                                   Buckets: 4096  Batches: 1  Memory Usage: 373kB
+                                                   ->  Nested Loop  (cost=47.29..2405.68 rows=4000 width=212) (actual time=1.327..109.730 rows=3961 loops=3)
+                                                         ->  Nested Loop  (cost=0.00..2.42 rows=1 width=212) (actual time=0.060..0.069 rows=1 loops=3)
+                                                               Join Filter: (enat.n_regionkey = ereg.r_regionkey)
+                                                               Rows Removed by Join Filter: 3
+                                                               ->  Seq Scan on nation enat  (cost=0.00..1.31 rows=1 width=112) (actual time=0.018..0.026 rows=1 loops=3)
+                                                                     Filter: (n_name = 'FRANCE'::bpchar)
+                                                                     Rows Removed by Filter: 24
+                                                               ->  Seq Scan on region ereg  (cost=0.00..1.05 rows=5 width=108) (actual time=0.005..0.005 rows=4 loops=3)
+                                                         ->  Bitmap Heap Scan on supplier s  (cost=47.29..2363.25 rows=4000 width=8) (actual time=1.246..108.798 rows=3961 loops=3)
+                                                               Recheck Cond: (s_nationkey = enat.n_nationkey)
+                                                               Heap Blocks: exact=1845
+                                                               ->  Bitmap Index Scan on idx_supplier_nationkey  (cost=0.00..46.29 rows=4000 width=0) (actual time=0.743..0.743 rows=3961 loops=3)
+                                                                     Index Cond: (s_nationkey = enat.n_nationkey)
+                                       ->  Index Scan using orders_pkey on orders o  (cost=0.43..5.67 rows=1 width=12) (actual time=0.344..0.344 rows=1 loops=15857)
+                                             Index Cond: (o_orderkey = l.l_orderkey)
+                                 ->  Index Scan using customer_pkey on customer c  (cost=0.43..5.59 rows=1 width=8) (actual time=0.215..0.215 rows=1 loops=15857)
+                                       Index Cond: (c_custkey = o.o_custkey)
+                           ->  Hash  (cost=1.25..1.25 rows=25 width=112) (actual time=0.141..0.142 rows=25 loops=3)
+                                 Buckets: 1024  Batches: 1  Memory Usage: 10kB
+                                 ->  Seq Scan on nation inat  (cost=0.00..1.25 rows=25 width=112) (actual time=0.125..0.129 rows=25 loops=3)
+                     ->  Hash  (cost=1.05..1.05 rows=5 width=108) (actual time=3341.395..3341.396 rows=5 loops=3)
+                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                           ->  Seq Scan on region ireg  (cost=0.00..1.05 rows=5 width=108) (actual time=3341.224..3341.232 rows=5 loops=3)
+ Planning Time: 26.869 ms
+ JIT:
+   Functions: 253
+   Options: Inlining true, Optimization true, Expressions true, Deforming true
+   Timing: Generation 55.279 ms, Inlining 1140.201 ms, Optimization 5085.114 ms, Emission 3801.466 ms, Total 10082.060 ms
+ Execution Time: 29800.333 ms
+(145 rows)
+

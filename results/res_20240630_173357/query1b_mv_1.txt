@@ -1,0 +1,8 @@
+psql:sql/mv1/query1b.sql:28: ERROR:  column "exp_region" does not exist
+LINE 26:     ROLLUP(exp_region, exp_nation),
+                    ^
+HINT:  Perhaps you meant to reference the column "mv_q1.export_region".
+
+real	0m0.047s
+user	0m0.031s
+sys	0m0.012s

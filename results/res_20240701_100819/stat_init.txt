@@ -1,0 +1,21 @@
+lineitem
+*** Statistics for Table: lineitem ***
+Database size:  19 GB
+orders
+*** Statistics for Table: orders ***
+Database size:  19 GB
+part
+*** Statistics for Table: part ***
+Database size:  19 GB
+supplier
+*** Statistics for Table: supplier ***
+Database size:  19 GB
+nation
+*** Statistics for Table: nation ***
+Database size:  19 GB
+region
+*** Statistics for Table: region ***
+Database size:  19 GB
+customer
+*** Statistics for Table: customer ***
+Database size:  19 GB

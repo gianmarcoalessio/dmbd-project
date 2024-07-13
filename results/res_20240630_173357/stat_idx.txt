@@ -1,0 +1,28 @@
+lineitem
+*** Statistics for Table: lineitem ***
+All sizes:  lineitem_pkey | 1285 MB
+Database size:  14 GB
+orders
+*** Statistics for Table: orders ***
+All sizes:  orders_pkey | 321 MB
+Database size:  14 GB
+part
+*** Statistics for Table: part ***
+All sizes:  part_pkey | 43 MB
+Database size:  14 GB
+supplier
+*** Statistics for Table: supplier ***
+All sizes:  supplier_pkey | 2208 kB
+Database size:  14 GB
+nation
+*** Statistics for Table: nation ***
+All sizes:  nation_pkey | 16 kB
+Database size:  14 GB
+region
+*** Statistics for Table: region ***
+All sizes:  region_pkey | 16 kB
+Database size:  14 GB
+customer
+*** Statistics for Table: customer ***
+All sizes:  customer_pkey | 32 MB
+Database size:  14 GB

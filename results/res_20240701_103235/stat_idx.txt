@@ -1,0 +1,34 @@
+lineitem
+*** Statistics for Table: lineitem ***
+All sizes:  lineitem_pkey         | 1285 MB
+ idx_lineitem_partkey  | 430 MB
+ idx_lineitem_orderkey | 742 MB
+Database size:  16 GB
+orders
+*** Statistics for Table: orders ***
+All sizes:  orders_pkey        | 321 MB
+ idx_orders_custkey | 120 MB
+Database size:  16 GB
+part
+*** Statistics for Table: part ***
+All sizes:  part_pkey     | 43 MB
+ idx_part_type | 14 MB
+Database size:  16 GB
+supplier
+*** Statistics for Table: supplier ***
+All sizes:  supplier_pkey          | 2208 kB
+ idx_supplier_nationkey | 704 kB
+Database size:  16 GB
+nation
+*** Statistics for Table: nation ***
+All sizes:  nation_pkey | 16 kB
+Database size:  16 GB
+region
+*** Statistics for Table: region ***
+All sizes:  region_pkey | 16 kB
+Database size:  16 GB
+customer
+*** Statistics for Table: customer ***
+All sizes:  customer_pkey     | 32 MB
+ idx_customer_name | 58 MB
+Database size:  16 GB
